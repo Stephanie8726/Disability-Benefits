@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rick Justo | VA Disability Benefits Coach</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            transition: background-color 0.5s, color 0.5s;
+        }
+
+        .fade-up {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease-out;
+        }
+
+        .fade-up.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .profile-pic:hover {
+            transform: scale(1.05);
+        }
+
+        /* Testimonials horizontal scroll */
+        .testimonials-container {
+            display: flex;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+        }
+
+        .testimonial-card {
+            min-width: 300px;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+
+        .scroll-button {
+            background-color: rgba(0, 0, 0, 0.1);
+            border: none;
+            padding: 0.5rem 0.75rem;
+            border-radius: 9999px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .scroll-button:hover {
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800 font-sans transition-colors duration-500">
+
+    <!-- Navbar Sticky at top -->
+    <nav class="bg-white shadow fixed top-0 w-full z-50">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <a href="#home" class="font-bold text-xl text-teal-600">Rick Justo</a>
+
+                <a href="https://www.facebook.com/profile.php?id=61573859453326" target="_blank"
+                    class="text-gray-700 hover:text-teal-600"><i class="fab fa-facebook"></i></a>
+                <a href="https://wa.me/mywhatsapplink" target="_blank" class="text-gray-700 hover:text-teal-600"><i
+                        class="fab fa-whatsapp"></i></a>
+                <a href="https://www.linkedin.com/in/rick-justo-9695a87a/" target="_blank"
+                    class="text-gray-700 hover:text-teal-600"><i class="fab fa-linkedin"></i></a>
+            </div>
+            <div class="hidden md:flex space-x-4 items-center">
+                <a href="#home" class="text-gray-700 hover:text-teal-600 px-3 py-2 rounded-full transition">Home</a>
+                <a href="#testimonials"
+                    class="text-gray-700 hover:text-teal-600 px-3 py-2 rounded-full transition">Testimonials</a>
+                <!-- <a href="https://just4veterans.com/" target="_blank"
+                    class="text-gray-700 hover:text-teal-600 px-3 py-2 rounded-full transition">Just4Veterans
+                    Enterprise</a> -->
+                <button id="theme-toggle"
+                    class="px-3 py-2 rounded-full bg-gray-200 hover:bg-gray-300 transition text-gray-800">🌙</button>
+                <a href="https://calendly.com/rick-increase-va-rating/30min" target="_blank"
+                    class="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-full font-semibold transition">Free
+                    Strategy Session</a>
+            </div>
+            <div class="md:hidden flex items-center space-x-2">
+                <button id="mobile-menu-button" class="text-gray-800 text-2xl">☰</button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+            <a href="#home" class="block px-6 py-3 text-gray-700 hover:bg-gray-100 transition">Home</a>
+            <a href="#testimonials" class="block px-6 py-3 text-gray-700 hover:bg-gray-100 transition">Testimonials</a>
+            <a href="#official" class="block px-6 py-3 text-gray-700 hover:bg-gray-100 transition">Official Site</a>
+            <a href="https://calendly.com/rick-increase-va-rating/30min" target="_blank"
+                class="block px-6 py-3 bg-red-600 text-white text-center rounded-full hover:bg-red-700 transition font-semibold mt-2 mx-2">
+                Free Stategy Session
+            </a>
+
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="bg-teal-600 text-white py-20 text-center">
+        <img src="images/rickprofile1.jpg" alt="Rick Justo"
+            class="mx-auto w-40 h-40 rounded-full mb-4 border-4 border-white profile-pic transition-transform">
+        <h1 class="text-4xl md:text-5xl font-bold mb-2">
+            <span id="animated-text">Helping Veterans Understand Their VA Disability Benefits</span>
+        </h1>
+        <p class="text-lg mb-2">
+            Hi, I’m Rick, a veteran coach with
+            <a href="https://just4veterans.com" target="_blank"
+                 <a href="https://just4veterans.com" target="_blank" class="font-bold" style="color: tomato;">
+                Just4veterans Enterprise
+            </a>. I guide veterans step-by-step on VA disability benefits.
+        </p>
+        <p class="mb-4">📞 <a href="tel: (302)386-8155 class=" underline">(302)386-8155</a> | ✉️ <a
+                href="mailto:rickjust2@gmail.com" class="underline">rickjust2@gmail.com</a></p>
+        <button id="open-modal"
+            class="bg-red-600 text-white font-semibold px-6 py-3 rounded-full hover:bg-red-700 transition">Increase Your
+            VA Rating – Free 30-Minute Session</button>
+        <div class="mt-4 text-xl" id="countdown"></div>
+    </section>
+
+    <!-- About / What I Offer / How I Help Section -->
+    <section id="about" class="py-16 fade-up bg-white">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <h2 class="text-3xl font-bold text-center mb-8">What I Offer</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- About Me -->
+                <div class="bg-gray-50 p-8 rounded-xl shadow hover:shadow-xl transition text-center">
+                    <i class="fas fa-user text-4xl text-teal-600 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">About Me</h3>
+                    <p>I’m Rick, a VA Disability Benefits Coach helping veterans understand and maximize their benefits
+                        with confidence.</p>
+                </div>
+                <!-- What I Do -->
+                <div class="bg-gray-50 p-8 rounded-xl shadow hover:shadow-xl transition text-center">
+                    <i class="fas fa-briefcase text-4xl text-teal-600 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">What I Do</h3>
+                    <p>I educate, guide, and support veterans step-by-step through the VA claims and rating process.</p>
+                </div>
+                <!-- How I Help -->
+                <div class="bg-gray-50 p-8 rounded-xl shadow hover:shadow-xl transition text-center">
+                    <i class="fas fa-hands-helping text-4xl text-teal-600 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">How I Help</h3>
+                    <p>I help veterans avoid common mistakes, prepare documents properly, and improve their VA
+                        disability rating.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Carousel -->
+    <section id="testimonials" class="bg-gray-100 py-16 fade-up">
+        <div class="container mx-auto px-6 max-w-3xl">
+            <h2 class="text-3xl font-bold mb-8 text-center">Testimonials</h2>
+            <div id="testimonial-carousel" class="relative overflow-hidden">
+                <div class="carousel-inner whitespace-nowrap transition-transform duration-500">
+                    <div class="inline-block w-full px-2">
+                        <div class="bg-white p-6 rounded shadow">
+                            <p class="italic">“Rick helped me understand my VA rating and guided me to get an
+                                increase. I’m so thankful!”</p>
+                            <p class="mt-2 font-bold text-right">- Thomas G.</p>
+                        </div>
+                    </div>
+                    <div class="inline-block w-full px-2">
+                        <div class="bg-white p-6 rounded shadow">
+                            <p class="italic">“The step-by-step guidance made the VA process much easier. Highly
+                                recommend her coaching!”</p>
+                            <p class="mt-2 font-bold text-right">- Terron B</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div id="booking-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+        <div class="bg-white rounded-lg max-w-md mx-4 p-6 text-center">
+            <h2 class="text-2xl font-bold mb-4">Book Your Free Strategy Session</h2>
+            <p class="mb-4">Click below to schedule a 30-minute consultation!</p>
+            <a href="https://calendly.com/rick-increase-va-rating/30min" target="_blank"
+                class="bg-red-600 text-white px-6 py-3 rounded-full hover:bg-red-700 transition font-semibold">Book
+                Now</a>
+            <button id="close-modal" class="mt-4 px-4 py-2 border rounded-full hover:bg-gray-100">Close</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-6 text-center">
+        <p class="mb-2">&copy; 2025 Rick Justo | 
+    <a href="https://just4veterans.com" target="_blank" class="font-bold" style="color: tomato;">
+        Just4Veterans Enterprise
+    </a>. All rights reserved.
+</p>
+
+        <div class="flex justify-center space-x-6 text-lg mb-4">
+            <a href="https://www.facebook.com/profile.php?id=61573859453326" target="_blank"
+                class="hover:text-teal-400"><i class="fab fa-facebook"></i></a>
+            <a href="https://wa.me/mywhatsapplink" target="_blank" class="hover:text-teal-400"><i
+                    class="fab fa-whatsapp"></i></a>
+            <a href="https://calendly.com/rick-increase-va-rating/30min" target="_blank" class="hover:text-teal-400"><i
+                    class="fab fa-linkedin"></i></a>
+        </div>
+        <a href="https://calendly.com/rick-increase-va-rating/30min" target="_blank"
+            class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-full font-semibold transition">Book Now</a>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
+
+        // Hero text animation
+        const phrases = ["Helping Veterans Understand Their VA Disability Benefits", "Maximize Your VA Benefits", "Step-by-Step Guidance for Veterans"];
+        let index = 0;
+        const animatedText = document.getElementById('animated-text');
+        setInterval(() => { animatedText.textContent = phrases[index]; index = (index + 1) % phrases.length; }, 3000);
+
+        // Scroll fade-up animation
+        const faders = document.querySelectorAll('.fade-up');
+        const appearOptions = { threshold: 0.3 };
+        const appearOnScroll = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('show'); observer.unobserve(entry.target); } });
+        }, appearOptions);
+        faders.forEach(fader => appearOnScroll.observe(fader));
+
+        // Modal popup
+        const openModal = document.getElementById('open-modal');
+        const closeModal = document.getElementById('close-modal');
+        const modal = document.getElementById('booking-modal');
+        openModal.addEventListener('click', () => { modal.classList.remove('hidden'); modal.classList.add('flex'); });
+        closeModal.addEventListener('click', () => { modal.classList.add('hidden'); modal.classList.remove('flex'); });
+
+        // Countdown timer
+        const countdown = document.getElementById('countdown');
+        const targetDate = new Date().getTime() + 3 * 24 * 60 * 60 * 1000;
+        setInterval(() => {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            countdown.textContent = `Hurry! Book your free session in ${days}d ${hours}h ${minutes}m ${seconds}s`;
+        }, 1000);
+
+        // Testimonials carousel
+        const carousel = document.querySelector('.carousel-inner');
+        let offset = 0;
+        setInterval(() => {
+            offset -= 100;
+            if (offset < -100) { offset = 0; }
+            carousel.style.transform = `translateX(${offset}%)`;
+        }, 4000);
+
+        // Dark/Light mode toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('bg-gray-900');
+            document.body.classList.toggle('text-gray-50');
+            document.querySelectorAll('section').forEach(s => s.classList.toggle('bg-gray-900'));
+            themeToggle.textContent = document.body.classList.contains('bg-gray-900') ? '☀️' : '🌙';
+        });
+    </script>
+</body>
+
+</html>
